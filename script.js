@@ -34,6 +34,8 @@ const heightSlider = document.getElementById('calc-height__slider');
 const heightSpan = document.getElementById('calc-height');
 const outputValue = document.querySelector('.calc__output-value');
 
+const calcSwitch = document.querySelector('.calc__switch');
+
 let isLeft = true;
 let isMetric = true;
 
@@ -52,7 +54,7 @@ function toggleSlider() {
 toggleSlider();
 toggleSlider();
 
-const calcSwitch = document.querySelector('.calc__switch');
+calcSwitch.addEventListener('click', () => toggleSlider());
 
 const stepValues = [2.5, 3, 3.077, 3.91, 4, 4.81, 5, 5.95, 6, 6.66, 6.67, 7.81, 8, 10, 10.41];
 const minValues = [64, 19.2, 96, 50, 64, 100, 64, 50, 57.6, 64, 80, 100, 96, 96, 100];
