@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./calc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calc">
+        <div class="calc__side">
+            <img src="./img/calc-picture.png" alt="" class="calc__picture">
+        </div>
+        <div class="calc__side">
+            <form class="calc__form" id="calcForm">
+                <div class="calc__form-block first-block">
+                    <fieldset class="calc__step">
+                        <div class="calc__step-header calc__fieldset-header subinfo-block">
+                            <div class="calc__title-block">
+                                <p class="calc__fieldset-title calc__step-title">Выберите шаг пикселя</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="calc__form-input">
+                            <span id="calc-step" class="calc__form-span">4 мм</span>
+                            <input type="range" id="calc-step__slider" class="calc__form-slider" min="0" max="14" step="1" value="4">
+                        </div>
+                    </fieldset>
+    
+                    <fieldset class="calc__size">
+                        <div class="calc__size-header calc__fieldset-header">
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__fieldset-title calc__size-title">Размер экрана</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                            <div class="calc__title-block">
+                                <div class="calc__switch">
+                                    <div class="big-mark"></div>
+                                    <div class="calc__switch-slider" id="calc__switch-slider"></div>
+                                    <div class="big-mark"></div>
+                                    <div class="small-marks">
+                                        <!-- Маленькие черточки -->
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                        <div class="small-mark"></div>
+                                    </div>
+                                    <div class="label active label-left">см</div>
+                                    <div class="label label-right">м</div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="calc__size-width calc__size-block">
+                            <div class="calc__form-input">
+                                <span class="calc__form-label">ширина</span>
+                                <span id="calc-width" class="calc__form-span">570 см</span>
+                                <input type="range" id="calc-width__slider" class="calc__form-slider" min="0.64" max="14.72" step="0.64" value="4">
+                            </div>
+    
+                            <div class="calc__form-input">
+                                <span class="calc__form-label">высота</span>
+                                <span id="calc-height" class="calc__form-span">800 см</span>
+                                <input type="range" id="calc-height__slider" class="calc__form-slider" min="0.64" max="14.72" step="0.64" value="4">
+                            </div>
+    
+                            <div class="calc__output">
+                                <p class="calc__output-title">Площадь:</p>
+                                <span class="calc__output-value">5,13 м²</span>
+                            </div>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset class="calc__delivery">
+                        <div class="calc__title-block subinfo-block">
+                            <p class="calc__fieldset-title calc__delivery-title">Доставка:</p>
+                            <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                            <div class="calc__subinfo">
+                                <span class="close-btn"></span>
+    
+                                <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                    Измерьте или прикиньте на глаз размер и
+                                    определите формат Вашего экрана.
+
+                                    Лучшее соотношение сторон
+                                    светодиодного экрана то, которое
+                                    соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                </p>
+                                <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                            </div>
+                        </div>
+                        <label class="calc__checkbox calc__checkbox--large">
+                            <input type="checkbox">
+                            <span class="checkbox-switch"></span>
+                        </label>
+                    </fieldset>
+    
+                    <a href="#!" class="calc__modal-btn">
+                        <img src="./img/calc-modal.svg" alt="" class="calc__modal-img">
+                        <p class="calc__modal-title">Бесплатный выезд замерщика</p>
+                    </a>
+                </div>
+                <div class="calc__form-block second-block">
+                    <fieldset class="calc__parameters checkboxes-block">
+                        <legend class="calc__legend calc__fieldset-title">Дополнительные параметры</legend>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Управляющий компьютер</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Wi-fi роутер</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Датчик яркости</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Датчик температуры</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Видеопроцессор</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+                                        
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="calc__montage checkboxes-block">
+                        <legend class="calc__legend calc__fieldset-title">Монтаж</legend>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Электрощитовая</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Шефмонтаж</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Монтаж оборудования</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Изготовление металлоконструкции</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Монтаж металлоконстракции</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc__checkbox-item">
+                            <label class="calc__checkbox calc__checkbox">
+                                <input type="checkbox">
+                                <span class="checkbox-switch"></span>
+                            </label>
+                            <div class="calc__title-block subinfo-block">
+                                <p class="calc__checkbox-title">Набор запасных частей</p>
+                                <span class="calc__subinfo-span subinfo-btn"><img src="./img/calc-span.svg" alt=""></span>
+    
+                                <div class="calc__subinfo">
+                                    <span class="close-btn"></span>
+        
+                                    <p class="calc__subinfo-text">Обратите внимание на место установки.
+                                        Измерьте или прикиньте на глаз размер и
+                                        определите формат Вашего экрана.
+
+                                        Лучшее соотношение сторон
+                                        светодиодного экрана то, которое
+                                        соответствует обычному формату видео и компьютерных программ: 4:3 или 16:9.
+                                    </p>
+                                    <a href="#!" class="calc__subinfo-link">Пример экрана, в формате 4:3:</a>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <a href="#!" class="calc__bottom-btn calculation-btn">
+                    <img src="./img/calc-bottom-1.svg" alt="" class="calc__btn-img">
+                    <p class="calc__btn-title">Получить подробный расчет</p>
+                </a>
+                <a href="#!" class="calc__bottom-btn budget-btn">
+                    <img src="./img/calc-bottom-2.svg" alt="" class="calc__btn-img">
+                    <p class="calc__btn-title">Получить подробную смету</p>
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,531 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 20vh 0 15vh;
+}
+
+.calc__form-slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 5px;
+    background: #FFFFFF;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.calc__form-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #A48EF8 0%, #9FDEF7 100%);
+    cursor: pointer;
+}
+
+/* switch */
+
+.calc__switch {
+    position: relative;
+    width: 65px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.big-mark {
+    width: 4px;
+    height: 20px;
+    background-color: #E8E8E8;
+}
+
+.small-marks {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    display: flex;
+    gap: 2px;
+    width: max-content;
+}
+
+.small-mark {
+    width: 2px;
+    height: 10px;
+    background-color: #E8E8E8;
+}
+
+.calc__switch-slider {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 24px;
+    background: url('./img/active-mark.svg') no-repeat center;
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.calc__switch .label {
+    position: absolute;
+    bottom: -20px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #DBCACA;
+}
+
+.calc__switch .label.active {
+    color: #000;
+}
+
+.calc__switch .label-left {
+    left: -5px;
+}
+
+.calc__switch .label-right {
+    right: -5px;
+}
+
+/* checkbox */
+
+.calc__checkbox {
+	display: inline-block;    
+	height: auto;     
+	position: relative;
+	vertical-align: middle;
+	font-size: 14px;
+	user-select: none;	
+}
+.calc__checkbox .checkbox-switch {
+	position: relative;	
+	display: inline-block;
+	box-sizing: border-box;			
+	width: 33px;	
+	height: 18px;
+	border-radius: 30px;
+	vertical-align: top;
+	background: #FFFFFF;
+	transition: .2s ease all;
+}
+.calc__checkbox .checkbox-switch:before {
+	content: '';
+	position: absolute;
+	top: 1.5px;
+	left: 1px;	
+	display: inline-block;
+	width: 14px;	
+	height: 14px;
+	border-radius: 50%;
+    background: linear-gradient(180deg, rgba(164, 142, 248, 1) 0%, rgba(159, 222, 247, 1) 100%);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+	transition: .15s;
+}
+.calc__checkbox input[type=checkbox] {
+	display: block;	
+	width: 0;
+	height: 0;	
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+.calc__checkbox input[type=checkbox]:not(:disabled):active + .checkbox-switch:before {
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, .3);
+}
+.calc__checkbox input[type=checkbox]:checked + .checkbox-switch {
+	background: #393939;
+}
+.calc__checkbox input[type=checkbox]:checked + .checkbox-switch:before {
+    transform: translateX(15px);
+}
+ 
+/* Hover */
+.calc__checkbox input[type="checkbox"]:not(:disabled) + .checkbox-switch {
+	cursor: pointer;
+}
+ 
+/* Disabled */
+.calc__checkbox input[type=checkbox]:disabled + .checkbox-switch {
+	filter: grayscale(70%);
+}
+.calc__checkbox input[type=checkbox]:disabled + .checkbox-switch:before {
+	background: #eee;
+}
+ 
+/* Focus */
+.calc__checkbox.focused .checkbox-switch:before {
+	box-shadow: inset 0px 0px 4px #ff5623;
+}
+
+/* large checkbox */
+
+.calc__checkbox--large .checkbox-switch {
+    width: 51px;
+    height: 27px;
+}
+.calc__checkbox--large .checkbox-switch:before {
+    width: 23px;
+    height: 23px;
+}
+.calc__checkbox--large input[type=checkbox]:checked + .checkbox-switch:before {
+    transform: translateX(24.5px);
+}
+
+/* calculator */
+.calc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.calc__picture {
+    width: 100%;
+    max-height: 484px;
+    object-fit: cover;
+}
+
+.calc__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    background: linear-gradient(180deg, rgba(164, 142, 248, 0.5) 0%, #FFFFFF 100%);
+}
+.calc__form-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px 0 10px;
+}
+.calc__form-block.first-block {
+    padding-right: 35px;
+    padding-left: 32px;
+    border-right: 1px solid rgba(255, 255, 255, .5);
+}
+
+.calc__form-block:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.calc__title-block {
+    position: relative;
+    display: flex;
+    width: max-content;
+}
+.calc__fieldset-title {
+    font-size: 16px;
+    line-height: 19px;
+    margin-bottom: 15px;
+}
+.calc__subinfo-span {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    cursor: pointer;
+}
+.calc__subinfo {
+    position: absolute;
+    bottom: 150%;
+    left: 105%;
+    background: #fff;
+    border: 1.5px solid #A7A7A7;
+    border-radius: 10px;
+    min-width: 150px;
+    width: 250px;
+    padding: 10px 15px;
+    padding-top: 20px;
+
+    display: none;
+}
+.calc__subinfo.show {
+    display: block;
+}
+
+.close-btn {
+    position: relative;
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+	cursor: pointer;
+    transition: opacity ease 0.5s;
+}
+.close-btn::before,
+.close-btn::after {
+    position: absolute;
+    top: 5px;
+    left: 0;
+	content: '';
+	display: block;
+	width: 10px;
+	height: 1px;
+	background: #0000008f;
+}
+.close-btn::before {
+	transform: rotate(45deg);
+}
+
+.close-btn::after {
+	transform: rotate(-45deg);
+}
+
+.calc__subinfo .close-btn {
+    width: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 6px;
+    right: 13.5px;
+}
+
+.calc__subinfo-text {
+    max-height: 95px;
+    overflow-y: scroll;
+
+    font-size: 10px;
+    line-height: 12px;
+    white-space: pre-line;
+}
+
+.calc__subinfo-text::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+.calc__subinfo-text::-webkit-scrollbar-track {
+    background: #fff;
+    border: 1px solid #999999
+}
+  
+.calc__subinfo-text::-webkit-scrollbar-thumb {
+    background-color: #999999;
+}
+
+.calc__subinfo-link {
+    font-size: 10px;
+    line-height: 12px;
+    color: #00000080;
+    text-decoration: none;
+}
+
+.calc__form-input {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.calc__form-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    background: #FFFFFF;
+    border-radius: 3px;
+    padding: 6px 0;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.calc__size {
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 12px;
+}
+.calc__size-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.calc__size-title {
+    margin-bottom: 0;
+}
+
+.calc__size-block .calc__form-label {
+    position: absolute;
+    top: -12px;
+    left: 0;
+
+    font-size: 10px;
+    line-height: 12px;
+    color: #2D2D2D;
+}
+.calc__size-block .calc__form-span {
+    background: #E8E8E8;
+}
+
+.calc__size-block .calc__form-slider {
+    background-color: #E8E8E8;
+}
+.calc__form-input:first-child {
+    margin-bottom: 25px;
+}
+.calc__output {
+    margin-top: 15px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-size: 16px;
+    line-height: 19px;
+    color: #000;
+}
+.calc__output-value {
+    padding: 3px 18px;
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff 0) padding-box,
+    linear-gradient(123.12deg, #A48EF8 -2.91%, #9FDEF7 69.74%) border-box;
+    border-radius: 5px;
+}
+
+.calc__delivery {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.calc__delivery .calc__fieldset-title {
+    margin-bottom: 0;
+}
+
+.calc__modal-btn {
+    display: flex;
+    gap: 10px;
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff 0) padding-box,
+    linear-gradient(123.12deg, #A48EF8 -2.91%, #9FDEF7 69.74%) border-box;
+    border-radius: 10px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+    text-decoration: none;
+
+    padding: 10px;
+    max-width: 195px;
+    width: 100%;
+}
+
+.calc__form-block.second-block {
+    padding-left: 35px;
+    gap: 30px;
+}
+.checkboxes-block .calc__fieldset-title {
+    margin-bottom: 10px;
+}
+.calc__checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+.calc__checkbox-item:last-child {
+    margin-bottom: 0;
+}
+.calc__checkbox-title {
+    font-size: 12px;
+    line-height: 14px;
+    color: #000;
+}
+
+.calc__bottom-btn {
+    position: relative;
+    margin: 0 auto;
+    padding: 5px 10px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: auto;
+
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+}
+.calc__bottom-btn.calculation-btn {
+    border: 3px solid transparent;
+    background: linear-gradient(#fff, #fff 0) padding-box,
+    linear-gradient(180deg, #A48EF8 0%, #9FDEF7 100%) border-box;
+}
+.calc__bottom-btn.budget-btn {
+    background: linear-gradient(90deg, #A48EF8 0%, #5798B1 100%);
+    color: #fff;
+}
+
+@media (max-width: 1024px) {
+    .calc {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .calc__form {
+        grid-template-columns: 1fr;
+    }
+    .calc__form-block.first-block {
+        padding: 15px;
+        border-right: none;
+    }
+    .calc__form-block.second-block {
+        padding: 15px;
+    }
+    .calc__bottom-btn {
+        width: 100%;
+    }
+}
